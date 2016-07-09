@@ -1,0 +1,3132 @@
+
+:toc:               left
+:toc-title:         Connector Summary
+:toclevels:         2
+:last-update-label!:
+:docinfo:
+:source-highlighter: coderay
+:icons: font
+
+
+= Valomnia Connector API Reference
+
++++
+Mule Connector for Valomnia.
+<p/>
+<p>
+Valomnia is  a solution laverages Mobility and Cloud technologies to streamline suppliers and manufacturers Sales and Distribution processes.
+</p>
+<p>
+Valomnia is made to improve operational efficiency in Direct Store Delivery (DSD) process, providing business oriented, simple and ergonomic apps for its users.
+</p>
++++
+
+*Additional Info*
+[width="50", cols=".<60%,^40%" ]
+|======================
+| Requires Mule Enterprise License |  No icon:remove[]  {nbsp}
+| Requires Entitlement |  No icon:remove[]  {nbsp}
+| Mule Version | 3.7.3 or higher
+|======================
+
+
+== Configs
+---
+=== Configuration
+`<valomnia:config>`
+
+
+`Connection Management` 
+
+
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+| Name | Java Type | Description | Default Value | Required
+|name | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | The name of this configuration. With this name can be later referenced. | | *x*{nbsp}
+| username | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++a username+++ |   | *x*{nbsp}
+| password | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++a password+++ |   | *x*{nbsp}
+| baseUrl | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++a baseUrl of Valomnia API+++ |   | *x*{nbsp}
+|======================
+
+
+
+== Processors
+
+---
+
+=== Find items
+`<valomnia:find-items>`
+
+
+
+
++++
+find all Items for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-items}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-items   config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/Item.html">Item</a>>+++ | +++List of all the Items+++
+|======================
+
+
+
+
+---
+
+=== Find customers
+`<valomnia:find-customers>`
+
+
+
+
++++
+find all Customers for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-customers}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-customers config-ref="Valomnia__Configuration" doc:name="Valomnia" />
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/Customer.html">Customer</a>>+++ | +++a List of all the Customers+++
+|======================
+
+
+
+
+---
+
+=== Find attributs
+`<valomnia:find-attributs>`
+
+
+
+
++++
+find all Attributs for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-attributs}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-attributs config-ref="Valomnia__Configuration" doc:name="Valomnia" />
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/Attribute.html">Attribute</a>>+++ | +++a List of all the Attributs+++
+|======================
+
+
+
+
+---
+
+=== Find items attribute
+`<valomnia:find-items-attribute>`
+
+
+
+
++++
+find all Items Attribute for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-items-attribute}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-items-attribute config-ref="Valomnia__Configuration" doc:name="Valomnia" />
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/ItemAttribute.html">ItemAttribute</a>>+++ | +++a List of all the  Items Attribute+++
+|======================
+
+
+
+
+---
+
+=== Find orders
+`<valomnia:find-orders>`
+
+
+
+
++++
+find all Items Orders for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-orders}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-orders config-ref="Valomnia__Configuration" doc:name="Valomnia" />
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/Order.html">Order</a>>+++ | +++a List of all the Orders+++
+|======================
+
+
+
+
+---
+
+=== Find items group
+`<valomnia:find-items-group>`
+
+
+
+
++++
+find all Items Group for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-items-group}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-items-group config-ref="Valomnia__Configuration" doc:name="Valomnia" />
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/ItemGroup.html">ItemGroup</a>>+++ | +++a List of all the Items  Group+++
+|======================
+
+
+
+
+---
+
+=== Find items group assign
+`<valomnia:find-items-group-assign>`
+
+
+
+
++++
+find all Items Group Assign for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-items-group-assign}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-items-group-assign config-ref="Valomnia__Configuration" doc:name="Valomnia" />
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/ItemGroupAssign.html">ItemGroupAssign</a>>+++ | +++a List of all the Items Group Assign+++
+|======================
+
+
+
+
+---
+
+=== Find units
+`<valomnia:find-units>`
+
+
+
+
++++
+find all Units for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-units}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-units config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/Unit.html">Unit</a>>+++ | +++a List of all the Units+++
+|======================
+
+
+
+
+---
+
+=== Find item units
+`<valomnia:find-item-units>`
+
+
+
+
++++
+find all Item Units for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-item-units}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-item-units   config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/ItemUnit.html">ItemUnit</a>>+++ | +++a List of all the Item Units+++
+|======================
+
+
+
+
+---
+
+=== Find tax types
+`<valomnia:find-tax-types>`
+
+
+
+
++++
+find all Tax Type for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-tax-types}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-tax-types   config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/TaxType.html">TaxType</a>>+++ | +++a List of all the TaxType+++
+|======================
+
+
+
+
+---
+
+=== Find tax lists
+`<valomnia:find-tax-lists>`
+
+
+
+
++++
+find all TaxLists for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-tax-lists}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-tax-lists config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/TaxList.html">TaxList</a>>+++ | +++a List of all the TaxList+++
+|======================
+
+
+
+
+---
+
+=== Find taxs
+`<valomnia:find-taxs>`
+
+
+
+
++++
+find all Taxs for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-taxs}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-taxs config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/Tax.html">Tax</a>>+++ | +++a List of all the Taxs+++
+|======================
+
+
+
+
+---
+
+=== Find price lists
+`<valomnia:find-price-lists>`
+
+
+
+
++++
+find all Price Lists for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-price-lists}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-price-lists config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/PriceList.html">PriceList</a>>+++ | +++a List of all the Price Lists+++
+|======================
+
+
+
+
+---
+
+=== Find prices
+`<valomnia:find-prices>`
+
+
+
+
++++
+find all Prices for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-prices}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-prices config-ref="Valomnia__Configuration" doc:name="Valomnia" />
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/Price.html">Price</a>>+++ | +++a List of all the Prices+++
+|======================
+
+
+
+
+---
+
+=== Find orders detail
+`<valomnia:find-orders-detail>`
+
+
+
+
++++
+find all Orders Detail for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-orders-detail}
++++
+
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/OrderDetail.html">OrderDetail</a>>+++ | +++a List of all the Orders Detail+++
+|======================
+
+
+
+
+---
+
+=== Find customers category
+`<valomnia:find-customers-category>`
+
+
+
+
++++
+find all Customers Category for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-customers-category}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-customers-category config-ref="Valomnia__Configuration" doc:name="Valomnia" />
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/CustomerCategory.html">CustomerCategory</a>>+++ | +++a List of all the Customers Category+++
+|======================
+
+
+
+
+---
+
+=== Find contacts
+`<valomnia:find-contacts>`
+
+
+
+
++++
+find all Contacts  for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-contacts}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-contacts  config-ref="Valomnia__Configuration" doc:name="Valomnia" />
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/Contact.html">Contact</a>>+++ | +++a List of all the Contacts+++
+|======================
+
+
+
+
+---
+
+=== Find customers group
+`<valomnia:find-customers-group>`
+
+
+
+
++++
+find all Customers Group for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-customers-group}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-customers-group config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/CustomerGroup.html">CustomerGroup</a>>+++ | +++a List of all the Customers Group+++
+|======================
+
+
+
+
+---
+
+=== Find customers group assign
+`<valomnia:find-customers-group-assign>`
+
+
+
+
++++
+find all Customers Group Assign for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-customers-group-assign}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-customers-group-assign config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/CustomerGroupAssign.html">CustomerGroupAssign</a>>+++ | +++a List of all the Customers Group Assign+++
+|======================
+
+
+
+
+---
+
+=== Find customers category price list
+`<valomnia:find-customers-category-price-list>`
+
+
+
+
++++
+find all Customers Category Price List for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-customers-category-price-list}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-customers-category-price-list config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/CustomerCategoryPriceList.html">CustomerCategoryPriceList</a>>+++ | +++a List of all the Customers Category Price List+++
+|======================
+
+
+
+
+---
+
+=== Find customers category tax list
+`<valomnia:find-customers-category-tax-list>`
+
+
+
+
++++
+find all Customers Category  Tax List for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-customers-category-tax-list}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-customers-category-price-list config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/CustomerCategoryTaxList.html">CustomerCategoryTaxList</a>>+++ | +++a List of all the Customers Category Tax List+++
+|======================
+
+
+
+
+---
+
+=== Find customers payment type
+`<valomnia:find-customers-payment-type>`
+
+
+
+
++++
+find all Customers Payment Type for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-customers-payment-type}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-customers-payment-type config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/CustomerPaymentType.html">CustomerPaymentType</a>>+++ | +++a List of all the Customers  Payment Type+++
+|======================
+
+
+
+
+---
+
+=== Find customers price list
+`<valomnia:find-customers-price-list>`
+
+
+
+
++++
+find all Customers Price List  for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-customers-price-list}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-customers-price-list config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/CustomerPriceList.html">CustomerPriceList</a>>+++ | +++a List of all the Customers Price List+++
+|======================
+
+
+
+
+---
+
+=== Find customers tax list
+`<valomnia:find-customers-tax-list>`
+
+
+
+
++++
+find all Customers Tax list for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-customers-tax-list}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-customers-tax-list config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/CustomerTaxList.html">CustomerTaxList</a>>+++ | +++a List of all the Customers Tax List+++
+|======================
+
+
+
+
+---
+
+=== Find ware houses
+`<valomnia:find-ware-houses>`
+
+
+
+
++++
+find all WareHouses for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-ware-houses}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-ware-houses config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/WareHouse.html">WareHouse</a>>+++ | +++a List of all the WareHouses+++
+|======================
+
+
+
+
+---
+
+=== Find ware house stocks
+`<valomnia:find-ware-house-stocks>`
+
+
+
+
++++
+find all WareHouses Stocks for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-ware-house-stock}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-ware-house-stocks config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/WareHouseStock.html">WareHouseStock</a>>+++ | +++a List of all the WareHouses Stocks+++
+|======================
+
+
+
+
+---
+
+=== Find employee groups
+`<valomnia:find-employee-groups>`
+
+
+
+
++++
+find all Employee Groups  for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-employee-groups}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-employee-groups config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/EmployeeGroup.html">EmployeeGroup</a>>+++ | +++a List of all the Employee Group+++
+|======================
+
+
+
+
+---
+
+=== Find employees
+`<valomnia:find-employees>`
+
+
+
+
++++
+find all Employees  for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-employees}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-employees config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/Employee.html">Employee</a>>+++ | +++a List of all the Employee+++
+|======================
+
+
+
+
+---
+
+=== Find users
+`<valomnia:find-users>`
+
+
+
+
++++
+find all Users for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-users}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-users config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/User.html">User</a>>+++ | +++a List of all the Users+++
+|======================
+
+
+
+
+---
+
+=== Find authority
+`<valomnia:find-authority>`
+
+
+
+
++++
+find all Authority for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-authority}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-authority config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/Authority.html">Authority</a>>+++ | +++a List of all the  Authority+++
+|======================
+
+
+
+
+---
+
+=== Find users authority
+`<valomnia:find-users-authority>`
+
+
+
+
++++
+find all  User Authority for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-users-authority}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-users-authority config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/UserAuthority.html">UserAuthority</a>>+++ | +++a List of all the   User Authority+++
+|======================
+
+
+
+
+---
+
+=== Find loadings
+`<valomnia:find-loadings>`
+
+
+
+
++++
+find all Loadings for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-loadings}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-loadings config-ref="Valomnia__Configuration" doc:name="Valomnia" />
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/Loading.html">Loading</a>>+++ | +++a List of all the  Loadings+++
+|======================
+
+
+
+
+---
+
+=== Find attributes value
+`<valomnia:find-attributes-value>`
+
+
+
+
++++
+find all Attributes Value for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-attributes-value}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-attributes-value config-ref="Valomnia__Configuration" doc:name="Valomnia" />
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/AttributeValue.html">AttributeValue</a>>+++ | +++a List of all the  Attributes Value+++
+|======================
+
+
+
+
+---
+
+=== Find loading details
+`<valomnia:find-loading-details>`
+
+
+
+
++++
+find all Loading Details for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-loading-details}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-loading-details config-ref="Valomnia__Configuration" doc:name="Valomnia" />
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/LoadingDetails.html">LoadingDetails</a>>+++ | +++a List of all the  Loading Details+++
+|======================
+
+
+
+
+---
+
+=== Find customers employee
+`<valomnia:find-customers-employee>`
+
+
+
+
++++
+find all Customers Employee for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-customers-employee}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-customers-employee config-ref="Valomnia__Configuration" doc:name="Valomnia" />
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/CustomerEmployee.html">CustomerEmployee</a>>+++ | +++a List of all the  Loadings+++
+|======================
+
+
+
+
+---
+
+=== Find orders payment
+`<valomnia:find-orders-payment>`
+
+
+
+
++++
+find all Orders Payment  for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-orders-payment}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-orders-payment config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/OrderPayment.html">OrderPayment</a>>+++ | +++a List of all the  Orders Payment+++
+|======================
+
+
+
+
+---
+
+=== Find items category
+`<valomnia:find-items-category>`
+
+
+
+
++++
+find all Items Category for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:find-items-category}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:find-items-category config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a><<a href="javadocs/org/mule/modules/valomnia/entities/ItemCategory.html">ItemCategory</a>>+++ | +++a List of all the  Items Category+++
+|======================
+
+
+
+
+---
+
+=== Merge item
+`<valomnia:merge-item>`
+
+
+
+
++++
+merge   an Item entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-item}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-item  config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="javadocs/org/mule/modules/valomnia/entities/Item.html">Item</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge customer category price list
+`<valomnia:merge-customer-category-price-list>`
+
+
+
+
++++
+merge   an CustomerCategoryPriceList entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-customer-category-price-list}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-customer-category-price-list  config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="javadocs/org/mule/modules/valomnia/entities/CustomerCategoryPriceList.html">CustomerCategoryPriceList</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge customer category
+`<valomnia:merge-customer-category>`
+
+
+
+
++++
+merge   an CustomerCategory entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-customer-category}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-customer-category  config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="javadocs/org/mule/modules/valomnia/entities/CustomerCategory.html">CustomerCategory</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge price list
+`<valomnia:merge-price-list>`
+
+
+
+
++++
+merge   an PriceList entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-price-list}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-price-list  config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="javadocs/org/mule/modules/valomnia/entities/PriceList.html">PriceList</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge customer category tax list
+`<valomnia:merge-customer-category-tax-list>`
+
+
+
+
++++
+merge   an CustomerCategoryTaxList entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-customer-category-tax-list}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-customer-category-tax-list  config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="javadocs/org/mule/modules/valomnia/entities/CustomerCategoryTaxList.html">CustomerCategoryTaxList</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge item category
+`<valomnia:merge-item-category>`
+
+
+
+
++++
+merge   an ItemCategory entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-item-category}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-item-category  config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="javadocs/org/mule/modules/valomnia/entities/ItemCategory.html">ItemCategory</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge tax list
+`<valomnia:merge-tax-list>`
+
+
+
+
++++
+merge   an TaxList entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-tax-list}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-tax-list  config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="javadocs/org/mule/modules/valomnia/entities/TaxList.html">TaxList</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge contact
+`<valomnia:merge-contact>`
+
+
+
+
++++
+merge   an Contact entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-contact}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-contact  config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="javadocs/org/mule/modules/valomnia/entities/Contact.html">Contact</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge customer
+`<valomnia:merge-customer>`
+
+
+
+
++++
+merge   an Customer entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-customer}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-customer  config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="javadocs/org/mule/modules/valomnia/entities/Customer.html">Customer</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge item attribute
+`<valomnia:merge-item-attribute>`
+
+
+
+
++++
+merge   an ItemAttribute entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-item-attribute}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-item-attribute  config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="javadocs/org/mule/modules/valomnia/entities/ItemAttribute.html">ItemAttribute</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge attribute
+`<valomnia:merge-attribute>`
+
+
+
+
++++
+merge   an Attribute entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-attribute}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-attribute config-ref="Valomnia__Configuration" doc:name="Valomnia" />
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="javadocs/org/mule/modules/valomnia/entities/Attribute.html">Attribute</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge employee
+`<valomnia:merge-employee>`
+
+
+
+
++++
+merge   an Employee entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-employee}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-employee config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="javadocs/org/mule/modules/valomnia/entities/Employee.html">Employee</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge customer group
+`<valomnia:merge-customer-group>`
+
+
+
+
++++
+merge   an CustomerGroup entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-customer-group}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-customer-group  config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="javadocs/org/mule/modules/valomnia/entities/CustomerGroup.html">CustomerGroup</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge customer employee
+`<valomnia:merge-customer-employee>`
+
+
+
+
++++
+merge   an CustomerEmployee entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-customer-employee}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-customer-employee  config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="javadocs/org/mule/modules/valomnia/entities/CustomerEmployee.html">CustomerEmployee</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge customer group assign
+`<valomnia:merge-customer-group-assign>`
+
+
+
+
++++
+merge   an CustomerGroupAssign entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-customer-group-assign}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-customer-group-assign  config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="javadocs/org/mule/modules/valomnia/entities/CustomerGroupAssign.html">CustomerGroupAssign</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge user authority
+`<valomnia:merge-user-authority>`
+
+
+
+
++++
+merge   an UserAuthority entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-user-authority}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-user-authority  config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="javadocs/org/mule/modules/valomnia/entities/UserAuthority.html">UserAuthority</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge authority
+`<valomnia:merge-authority>`
+
+
+
+
++++
+merge   an Authority entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-authority}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-authority  config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="javadocs/org/mule/modules/valomnia/entities/Authority.html">Authority</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge customer payment type
+`<valomnia:merge-customer-payment-type>`
+
+
+
+
++++
+merge   an CustomerPaymentType entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-customer-payment-type}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-customer-payment-type  config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="javadocs/org/mule/modules/valomnia/entities/CustomerPaymentType.html">CustomerPaymentType</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge customer price list
+`<valomnia:merge-customer-price-list>`
+
+
+
+
++++
+merge   an CustomerPriceList entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-customer-price-list}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-customer-price-list  config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="javadocs/org/mule/modules/valomnia/entities/CustomerPriceList.html">CustomerPriceList</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge customer tax list
+`<valomnia:merge-customer-tax-list>`
+
+
+
+
++++
+merge   an CustomerTaxList entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-customer-tax-list}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-customer-tax-list  config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="javadocs/org/mule/modules/valomnia/entities/CustomerTaxList.html">CustomerTaxList</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge employee group
+`<valomnia:merge-employee-group>`
+
+
+
+
++++
+merge   an EmployeeGroup entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-employee-group}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-employee-group  config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="javadocs/org/mule/modules/valomnia/entities/EmployeeGroup.html">EmployeeGroup</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge tax
+`<valomnia:merge-tax>`
+
+
+
+
++++
+merge   an Tax entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-tax}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-tax  config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="javadocs/org/mule/modules/valomnia/entities/Tax.html">Tax</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge item group
+`<valomnia:merge-item-group>`
+
+
+
+
++++
+merge   an ItemGroup entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-item-group}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-item-group  config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="javadocs/org/mule/modules/valomnia/entities/ItemGroup.html">ItemGroup</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge item group assign
+`<valomnia:merge-item-group-assign>`
+
+
+
+
++++
+merge   an ItemGroupAssign entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-item-group-assign}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-item-group-assign  config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="javadocs/org/mule/modules/valomnia/entities/ItemGroupAssign.html">ItemGroupAssign</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge attribute value
+`<valomnia:merge-attribute-value>`
+
+
+
+
++++
+merge   an AttributeValue entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-attribute-value}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-attribute-value config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="javadocs/org/mule/modules/valomnia/entities/AttributeValue.html">AttributeValue</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge item unit
+`<valomnia:merge-item-unit>`
+
+
+
+
++++
+merge   an ItemUnit entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-item-unit}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-item-unit config-ref="Valomnia__Configuration" doc:name="Valomnia" />
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="javadocs/org/mule/modules/valomnia/entities/ItemUnit.html">ItemUnit</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge loading
+`<valomnia:merge-loading>`
+
+
+
+
++++
+merge   an Loading entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-loading}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-loading config-ref="Valomnia__Configuration" doc:name="Valomnia" />
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="javadocs/org/mule/modules/valomnia/entities/Loading.html">Loading</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge loading details
+`<valomnia:merge-loading-details>`
+
+
+
+
++++
+merge   an LoadingDetails entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-loading-details}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-loading-details config-ref="Valomnia__Configuration" doc:name="Valomnia" />
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="javadocs/org/mule/modules/valomnia/entities/LoadingDetails.html">LoadingDetails</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge order detail
+`<valomnia:merge-order-detail>`
+
+
+
+
++++
+merge   an OrderDetail entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-order-detail}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-order-detail config-ref="Valomnia__Configuration" doc:name="Valomnia" />
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="javadocs/org/mule/modules/valomnia/entities/OrderDetail.html">OrderDetail</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge order payment
+`<valomnia:merge-order-payment>`
+
+
+
+
++++
+merge   an OrderPayment entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-order-payment}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-order-payment config-ref="Valomnia__Configuration" doc:name="Valomnia" />
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="javadocs/org/mule/modules/valomnia/entities/OrderPayment.html">OrderPayment</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge price
+`<valomnia:merge-price>`
+
+
+
+
++++
+merge   an Price entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-price}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-price config-ref="Valomnia__Configuration" doc:name="Valomnia" />
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="javadocs/org/mule/modules/valomnia/entities/Price.html">Price</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge order
+`<valomnia:merge-order>`
+
+
+
+
++++
+merge   an Order entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-order}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-order config-ref="Valomnia__Configuration" doc:name="Valomnia" />
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html">Object</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge tax type
+`<valomnia:merge-tax-type>`
+
+
+
+
++++
+merge   an TaxType entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-tax-type}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-tax-type  config-ref="Valomnia__Configuration" doc:name="Valomnia" />
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="javadocs/org/mule/modules/valomnia/entities/TaxType.html">TaxType</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge unit
+`<valomnia:merge-unit>`
+
+
+
+
++++
+merge   an Unit entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-unit}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-unit  config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="javadocs/org/mule/modules/valomnia/entities/Unit.html">Unit</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge user
+`<valomnia:merge-user>`
+
+
+
+
++++
+merge   an User entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-user}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-order  config-ref="Valomnia__Configuration" doc:name="Valomnia"/>
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html">Object</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge ware house
+`<valomnia:merge-ware-house>`
+
+
+
+
++++
+merge   an WareHouse entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-ware-house}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-ware-house  config-ref="Valomnia__Configuration" doc:name="Valomnia" />
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html">Object</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+---
+
+=== Merge ware house stock
+`<valomnia:merge-ware-house-stock>`
+
+
+
+
++++
+merge  an WareHouseStock entity for the connected account
+{ @sample.xml /valomnia-connector/doc/valomnia-connector.xml.sample valomnia:merge-ware-house-stock}
++++
+
+==== XML Sample
+[source,xml]
+----
+<valomnia:merge-ware-house-stock   config-ref="Valomnia__Configuration" doc:name="Valomnia" />
+----
+
+    
+    
+==== Attributes
+[cols=".^20%,.^20%,.^35%,.^20%,^.^5%", options="header"]
+|======================
+|Name |Java Type | Description | Default Value | Required
+| config-ref | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | Specify which config to use | |*x*{nbsp}
+
+
+
+| payload icon:envelope[] | +++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html">Object</a>+++ | *The current message payload is automatically transformed and injected to this parameter.* +++<br>the input object merged+++ | #[payload] | {nbsp}
+
+
+|======================
+
+==== Returns
+[cols=".^40%,.^60%", options="header"]
+|======================
+|Return Java Type | Description
+|+++<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a>+++ | +++response String for Valomnia API+++
+|======================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
